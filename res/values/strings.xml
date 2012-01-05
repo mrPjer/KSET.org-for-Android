@@ -2,7 +2,7 @@
 <resources>
 
     <string name="hello">Hello World, MainMenuActivity!</string>
-    <string name="app_name">KSET for Android</string>
+    <string name="app_name">Klub Studenata Elektrotehnike</string>
 
     <!-- Tab labels -->
     <string name="tab_news">Vijesti</string>
