@@ -4,4 +4,10 @@
     <string name="hello">Hello World, MainMenuActivity!</string>
     <string name="app_name">KSET for Android</string>
 
+    <!-- Tab labels -->
+    <string name="tab_news">Vijesti</string>
+    <string name="tab_stream">Stream</string>
+    <string name="tab_about_kset">KSET</string>
+    <string name="tab_about">O aplikaciji</string>
+
 </resources>
