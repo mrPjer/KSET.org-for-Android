@@ -82,8 +82,8 @@ public class MainActivity extends FragmentActivity implements TabListener,
 	@Override
 	public void onTabSelected(Tab tab, FragmentTransaction ft) {
 		ft = getSupportFragmentManager().beginTransaction();
-		ft.replace(R.id.main_root, mFragments[tab.getPosition()]);
 		ft.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
+		ft.replace(R.id.main_root, mFragments[tab.getPosition()]);
 		ft.commit();
 	}
 
