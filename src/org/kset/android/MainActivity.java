@@ -2,10 +2,11 @@ package org.kset.android;
 
 import org.kset.android.fragments.AboutKsetFragment;
 import org.kset.android.fragments.NewsListFragment;
-import org.kset.android.fragments.VideoStreamFragment;
 import org.kset.android.fragments.NewsListFragment.NewsListListener;
+import org.kset.android.fragments.VideoStreamFragment;
 import org.kset.android.models.Source.Category.Feed.Article;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.net.Uri;
@@ -17,7 +18,13 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.ListFragment;
+import android.support.v4.view.Menu;
+import android.support.v4.view.MenuItem;
 import android.support.v4.view.Window;
+import android.text.SpannableString;
+import android.text.method.LinkMovementMethod;
+import android.text.util.Linkify;
+import android.widget.TextView;
 
 public class MainActivity extends FragmentActivity implements TabListener,
 		NewsListListener {
@@ -71,6 +78,29 @@ public class MainActivity extends FragmentActivity implements TabListener,
 	public void onRestoreInstanceState(Bundle savedInstanceState){
 		super.onRestoreInstanceState(savedInstanceState);
 		mActionBar.setSelectedNavigationItem(savedInstanceState.getInt(KEY_LAST_TAB));
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu){
+		getMenuInflater().inflate(R.menu.main_menu, menu);
+		return true;
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item){
+		if(item.getItemId() == R.id.menu_about){
+			final SpannableString s = new SpannableString(getResources().getString(R.string.about_text));
+			Linkify.addLinks(s, Linkify.ALL);
+			AlertDialog d = new AlertDialog.Builder(this)
+				.setTitle(R.string.about_title)
+				.setMessage(s)
+				.setIcon(android.R.drawable.ic_dialog_info)
+				.setNegativeButton(R.string.about_close, null)
+				.show();
+			((TextView)d.findViewById(android.R.id.message)).setMovementMethod(LinkMovementMethod.getInstance());
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
 	}
 	
 	@Override

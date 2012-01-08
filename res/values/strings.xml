@@ -8,9 +8,18 @@
     <string name="tab_news">Događaji</string>
     <string name="tab_stream">Stream</string>
     <string name="tab_about_kset">O klubu</string>
-    <string name="tab_about">O aplikaciji</string>
+
+    <!-- Menu labels -->
+    <string name="menu_about">O aplikaciji</string>
 
     <!-- News list -->
     <string name="news_unavailable">Popis događaja u ovom trenutku nije dostupan</string>
+
+    <!-- About -->
+    <string name="about_title">KSET za Android</string>
+    <string name="about_text">Ovu aplikaciju izradila je računarska sekcija Kluba Studenata Elektrotehnike\n\nAplikacija je otvorena koda i on je dostupan na\nhttps://github.com/mrPjer/KSET.org-for-Android\n\nAutori:\n\tPetar Šegina\n\t\tpsegina@kset.org</string>
+    <string name="about_source">Source</string>
+    <string name="about_web">Web</string>
+    <string name="about_close">Zatvori</string>
 
 </resources>
