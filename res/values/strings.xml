@@ -7,7 +7,7 @@
     <!-- Tab labels -->
     <string name="tab_news">Događaji</string>
     <string name="tab_stream">Stream</string>
-    <string name="tab_about_kset">KSET</string>
+    <string name="tab_about_kset">O klubu</string>
     <string name="tab_about">O aplikaciji</string>
 
     <!-- News list -->
