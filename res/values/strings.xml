@@ -16,6 +16,9 @@
     <string name="news_unavailable">Popis događaja u ovom trenutku nije dostupan</string>
     <string name="news_refresh">Osvježi</string>
 
+    <!-- About KSET -->
+    <string name="about_kset_open">Otvori u pregledniku</string>
+
     <!-- About -->
     <string name="about_title">KSET za Android</string>
     <string name="about_text">Ovu aplikaciju izradila je računarska sekcija Kluba Studenata Elektrotehnike\n\nAplikacija je otvorena koda i on je dostupan na\nhttps://github.com/mrPjer/KSET.org-for-Android\n\nAutori:\n\tPetar Šegina\n\t\tpsegina@kset.org</string>

@@ -1,8 +1,15 @@
 package org.kset.android.fragments;
 
+import org.kset.android.R;
+
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.Menu;
+import android.support.v4.view.MenuItem;
 import android.view.LayoutInflater;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebSettings.LayoutAlgorithm;
@@ -18,7 +25,8 @@ import android.webkit.WebView;
 public class AboutKsetFragment extends Fragment {
 
 	private WebView webview;
-
+	private static final String WEB_LOCATION = "http://www.kset.org";
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -30,4 +38,25 @@ public class AboutKsetFragment extends Fragment {
 		webview.getSettings().setLayoutAlgorithm(LayoutAlgorithm.SINGLE_COLUMN);
 		return webview;
 	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+		setHasOptionsMenu(true);
+	}
+
+	@Override
+	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+		inflater.inflate(R.menu.about_kset_menu, menu);
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		if(item.getItemId() == R.id.about_kset_open){
+			startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(WEB_LOCATION)));
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
+	}
+
 }
