@@ -14,6 +14,7 @@
 
     <!-- News list -->
     <string name="news_unavailable">Popis događaja u ovom trenutku nije dostupan</string>
+    <string name="news_refresh">Osvježi</string>
 
     <!-- About -->
     <string name="about_title">KSET za Android</string>
