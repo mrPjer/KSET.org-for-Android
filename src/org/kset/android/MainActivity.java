@@ -21,6 +21,8 @@ import android.support.v4.view.Window;
 
 public class MainActivity extends FragmentActivity implements TabListener,
 		NewsListListener {
+	private static final String KEY_LAST_TAB = "org.kset.android.last_tab";
+
 	private ActionBar mActionBar;
 	private Resources mResources;
 
@@ -48,15 +50,27 @@ public class MainActivity extends FragmentActivity implements TabListener,
 	}
 
 	@Override
-	public void onResume(){
+	public void onResume() {
 		super.onResume();
 		((NewsListFragment) mFragments[0]).registerListener(this);
 	}
-	
+
 	@Override
-	public void onPause(){
+	public void onPause() {
 		((NewsListFragment) mFragments[0]).unregisterListener(this);
 		super.onPause();
+	}
+
+	@Override
+	public void onSaveInstanceState(Bundle outState) {
+		outState.putInt(KEY_LAST_TAB, mActionBar.getSelectedTab().getPosition());
+		super.onSaveInstanceState(outState);
+	}
+
+	@Override
+	public void onRestoreInstanceState(Bundle savedInstanceState){
+		super.onRestoreInstanceState(savedInstanceState);
+		mActionBar.setSelectedNavigationItem(savedInstanceState.getInt(KEY_LAST_TAB));
 	}
 	
 	@Override
