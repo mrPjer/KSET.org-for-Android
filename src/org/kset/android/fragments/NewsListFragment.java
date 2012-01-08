@@ -189,10 +189,12 @@ public class NewsListFragment extends ListFragment {
 				// Reverse the Articles so they are ordered by date ascending
 				result.reverseArticleOrder();
 				// Bind the latest data
-				setListAdapter(new FeedListAdapter(getActivity(),
-						R.layout.news_list_item, mFeed.getArticles()));
-				// Remove the progress circle
-				setListShown(true);
+				if (isVisible()) {
+					setListAdapter(new FeedListAdapter(getActivity(),
+							R.layout.news_list_item, mFeed.getArticles()));
+					// Remove the progress circle
+					setListShown(true);
+				}
 			} else {
 				Toast.makeText(getActivity(), R.string.news_unavailable,
 						Toast.LENGTH_LONG).show();
