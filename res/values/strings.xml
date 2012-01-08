@@ -2,7 +2,7 @@
 <resources>
 
     <string name="hello">Hello World, MainMenuActivity!</string>
-    <string name="app_name">Klub Studenata Elektrotehnike</string>
+    <string name="app_name">KSET</string>
 
     <!-- Tab labels -->
     <string name="tab_news">Događaji</string>
